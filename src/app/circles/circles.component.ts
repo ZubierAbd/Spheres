@@ -10,6 +10,7 @@ export class CirclesComponent implements OnInit {
   public padding = 20 + "px";
   public margin = 15 + "px";
   public interval = 1200; 
+  public isChanged = false;
 
   public randomColor() {
     this.randomMargin();
@@ -44,7 +45,7 @@ export class CirclesComponent implements OnInit {
   }
 
   public setRandomInterval(){
-   var y = Math.floor(Math.random()*12000 + 1);
+   var y = Math.floor(Math.random()*15000 + 1);
    console.log(y);
    //this.randomColor();
    setTimeout(()=>{
@@ -81,6 +82,18 @@ export class CirclesComponent implements OnInit {
     }
   }
 
+  public returnToNormal(){
+    setTimeout(()=>{
+      this.color = "#331e38";
+      this.padding = "20px";
+      this.margin = "15px";
+    },15000)
+  }
+
+  public onOff(){
+    this.isChanged ? this.returnToNormal() : this.randomColor();
+  }
+
   public randomPadding() {
     var x = Math.floor(Math.random() * 6 + 1);
     switch (x) {
@@ -109,5 +122,6 @@ export class CirclesComponent implements OnInit {
 
   ngOnInit() {
     this.setRandomInterval();
+    this.returnToNormal();
   }
 }
