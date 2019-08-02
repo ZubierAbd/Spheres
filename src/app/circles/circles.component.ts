@@ -9,48 +9,54 @@ export class CirclesComponent implements OnInit {
   public color: string = "#331e38";
   public padding = 20 + "px";
   public margin = 15 + "px";
-  public interval = 1200; 
+  public interval = 1200;
   public isChanged = false;
 
   public randomColor() {
     this.randomMargin();
     this.randomPadding();
-    var x = Math.floor(Math.random() * 6 + 1);
+    var x = Math.floor(Math.random() * 10 + 1);
     switch (x) {
       case 1:
         this.color = "#02c39a";
-        console.log(this.color);
         break;
       case 2:
         this.color = "#05668d";
-        console.log(this.color);
         break;
       case 3:
         this.color = "#028090";
-        console.log(this.color);
         break;
       case 4:
         this.color = "#2e294e";
-        console.log(this.color);
         break;
       case 5:
         this.color = "#8661c1";
-        console.log(this.color);
         break;
       case 6:
         this.color = "#c84630";
-        console.log(this.color);
+        break;
+      case 7:
+        this.color = "#fe5e41";
+        break;
+      case 8:
+        this.color = "#f7b32b";
+        break;
+      case 9:
+        this.color = "#63a375";
+        break;
+      case 10:
+        this.color = "#f72c25";
         break;
     }
   }
 
-  public setRandomInterval(){
-   var y = Math.floor(Math.random()*15000 + 1);
-   console.log(y);
-   //this.randomColor();
-   setTimeout(()=>{
-     this.randomColor();
-   }, y);
+  public setRandomInterval() {
+    var y = Math.floor(Math.random() * 15000 + 1);
+    console.log(y);
+    //this.randomColor();
+    setTimeout(() => {
+      this.randomColor();
+    }, y);
   }
 
   public randomMargin() {
@@ -82,15 +88,15 @@ export class CirclesComponent implements OnInit {
     }
   }
 
-  public returnToNormal(){
-    setTimeout(()=>{
+  public returnToNormal() {
+    setTimeout(() => {
       this.color = "#331e38";
       this.padding = "20px";
       this.margin = "15px";
-    },15000)
+    }, 30000);
   }
 
-  public onOff(){
+  public onOff() {
     this.isChanged ? this.returnToNormal() : this.randomColor();
   }
 
@@ -101,7 +107,7 @@ export class CirclesComponent implements OnInit {
         this.padding = 5 + "px";
         break;
       case 2:
-        this.padding = 12 +  "px";
+        this.padding = 12 + "px";
         break;
       case 3:
         this.padding = 24 + "px";
@@ -115,6 +121,12 @@ export class CirclesComponent implements OnInit {
       case 6:
         this.padding = 60 + "px";
         break;
+    }
+  }
+
+  onKeyDown(event) {
+    if (event.key === "Enter") {
+      this.returnToNormal();
     }
   }
 

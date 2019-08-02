@@ -1,9 +1,9 @@
 .circle { 
-    width: 8vw; 
-    height: 8vw; 
+    width: 7vw; 
+    height: 7vw; 
     border-radius: 50%;
     float: inline-start;
     box-shadow: 10px 60px 15px #555555;
-    transition-duration: 3s;
+    transition-duration: 4s;
     transition-timing-function: ease;
 }
