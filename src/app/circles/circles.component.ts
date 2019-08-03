@@ -101,7 +101,7 @@ export class CirclesComponent implements OnInit {
   }
 
   public randomPadding() {
-    var x = Math.floor(Math.random() * 6 + 1);
+    var x = Math.floor(Math.random() * 10 + 1);
     switch (x) {
       case 1:
         this.padding = 5 + "px";
@@ -121,6 +121,14 @@ export class CirclesComponent implements OnInit {
       case 6:
         this.padding = 60 + "px";
         break;
+      case 7:
+        this.padding = -10 + "px";
+      case 8:
+        this.padding = -20 + "px";
+      case 9:
+        this.padding = -30 + "px";
+      case 10:
+        this.padding = -40 + "px";
     }
   }
 
